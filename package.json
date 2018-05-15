@@ -1,0 +1,34 @@
+{
+  "name": "AvitoTest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Тестовое задание в Авито",
+  "scripts": {
+    "eslint": "eslint js/",
+    "build": "gulp build",
+    "start": "gulp serve",
+    "test": "npm run eslint && gulp test"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
+    "babel-register": "6.26.0",
+    "browser-sync": "2.18.8",
+    "chai": "4.1.2",
+    "del": "2.2.2",
+    "eslint": "4.2.0",
+    "eslint-config-htmlacademy": "0.4.x",
+    "gulp": "3.9.1",
+    "gulp-better-rollup": "3.1.0",
+    "gulp-mocha": "5.0.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-sourcemaps": "2.6.4"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  }
+}
