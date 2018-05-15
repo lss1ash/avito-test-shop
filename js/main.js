@@ -1,4 +1,4 @@
 const onContentLoaded = () => {
-  // do something :)
+  // console.log(`do smthng!`);
 };
 document.addEventListener(`DOMContentLoaded`, onContentLoaded);
