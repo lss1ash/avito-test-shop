@@ -1,7 +1,7 @@
 export default class AbstractView {
   constructor() {
     if (new.target === AbstractView) {
-      throw new Error(`Can't instantiate AbstractView, only concrete one`);
+      throw new Error(`Can't instantiate AbstractView`);
     }
   }
 
@@ -13,21 +13,18 @@ export default class AbstractView {
     if (this._element) {
       return this._element;
     }
-    this._element = this.render();
-    this.bind(this._element);
+    this._element = this._render();
+    this.bind();
     return this._element;
   }
 
-  _getElementFromString(str) {
+  _render() {
     const element = document.createElement(`section`);
-    element.innerHTML = str;
+    element.innerHTML = this.template;
     return element.firstElementChild ? element.firstElementChild : false;
   }
 
-  render() {
-    return this._getElementFromString(this.template);
-  }
-
   bind() {
+    throw new Error(`Bind should be implemented`);
   }
 }
