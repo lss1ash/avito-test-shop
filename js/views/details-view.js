@@ -54,20 +54,20 @@ export default class DetailsView extends AbstractView {
 
   bind() {
     this.element.querySelector(`.details-close`).addEventListener(`click`, () => this._onCrossClick());
-    document.addEventListener(`keydown`, (e) => this._onKeyDown(e));
+    // this.element.querySelector(`.details`).addEventListener(`keydown`, (e) => this._onKeyDown(e));
   }
 
-  _onKeyDown(e) {
-    if (e.keyCode === 27) {
-      this._remove();
-    }
-  }
+  // _onKeyDown(e) {
+  //   if (e.keyCode === 27) {
+  //     this._remove();
+  //   }
+  // }
 
   _onCrossClick() {
-    this._remove();
+    this.removeNode();
   }
 
-  _remove() {
+  removeNode() {
     this.element.parentElement.removeChild(this.element);
   }
 }
